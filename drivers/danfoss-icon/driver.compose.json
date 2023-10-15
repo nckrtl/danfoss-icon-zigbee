@@ -1,0 +1,24 @@
+{
+  "name": {
+    "en": "Danfoss Icon Zigbee Module"
+  },
+  "class": "thermostat",
+  "capabilities": ["measure_temperature"],
+  "platforms": ["local"],
+  "connectivity": ["zigbee"],
+  "zigbee": {
+    "manufacturerName": "Danfoss",
+    "productId": ["0x8020"],
+    "endpoints": {
+      "extendedEndpointDescriptors": {
+        "1": {
+          "clusters": [1]
+        }
+      }
+    }
+  },
+  "images": {
+    "large": "/drivers/updown_remote_control/assets/images/large.png",
+    "small": "/drivers/updown_remote_control/assets/images/small.png"
+  }
+}
