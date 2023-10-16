@@ -6,13 +6,11 @@ debug(true);
 
 class ThermostatDevice extends ZigBeeDevice {
   async onNodeInit({ zclNode }) {
-    // Read the "localTemperature" attribute from the "thermostat" cluster
-    const currentTemperatureValue =
-      await zclNode.endpoints.extendedEndpointDescriptors[1].clusters.thermostat.readAttributes(
-        'localTemperature'
-      );
+    const currentTemperatureValue = await zclNode.endpoints[1].clusters.thermostat.readAttributes([
+      'localTemperature',
+    ]);
 
-    console.log(currentTemperatureValue);
+    console.log(currentTemperatureValue.localTemperature);
   }
 }
 
